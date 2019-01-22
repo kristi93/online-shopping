@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PageController {
 
-	@RequestMapping(value = { "/", "/home", "/index" })
+	@RequestMapping(value = { "/", "home", "/index" })
 	public ModelAndView index() {
 
 		ModelAndView mv = new ModelAndView("page");
@@ -17,6 +17,7 @@ public class PageController {
 		return mv;
 	}
 
+	
 	
 	@RequestMapping(value = "/about")
 	public ModelAndView about() {
