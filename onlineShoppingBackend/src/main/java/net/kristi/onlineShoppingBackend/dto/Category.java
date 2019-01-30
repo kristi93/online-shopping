@@ -8,10 +8,6 @@ public class Category {
 	private String imageURL;
 	private boolean active = true;
 	
-	
-	
-	
-	
 	public int getId() {
 		return id;
 	}
