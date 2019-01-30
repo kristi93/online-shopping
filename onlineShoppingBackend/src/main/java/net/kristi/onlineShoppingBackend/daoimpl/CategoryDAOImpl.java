@@ -20,7 +20,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		//First category
 		Category category = new Category();
 		category.setId(1);
-		category.setName("TV");
+		category.setName("Television");
 		category.setDescription("Extra info about Category 1");
 		category.setImageURL("category1.png");;
 		categories.add(category);
@@ -46,6 +46,20 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Override
 	public List<Category> list() {
 		return categories;
+	}
+
+	@Override
+	public Category getId(int id) {
+		
+		for (Category category : categories) {
+			
+			if(category.getId() == id) {
+				return category;
+			}
+			
+		}
+		
+		return null;
 	}
 
 }
