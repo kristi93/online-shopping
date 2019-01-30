@@ -25,7 +25,6 @@ public class PageController {
 		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickHome", true);
 		
-		
 		return mv;
 	}
 
@@ -48,39 +47,39 @@ public class PageController {
 	}
 	
 	
-	/*
-	 * Show all products
-	 * */
-	@RequestMapping(value = "/show/all/products")
+	/**
+	 * List All Products
+	 */
+	@RequestMapping(value="/show/all/products")
 	public ModelAndView showAllProducts() {
+	
+	ModelAndView mv = new ModelAndView("page");
+	mv.addObject("title", "All Products");
+	
+	//passing list
+//	mv.addObject("categories", categoryDAO.list());
+	mv.addObject("userClickAllProducts", true);
 
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("title", "All Products");
-		//listCategories
-		mv.addObject("categories", categoryDAO.list());	
-		mv.addObject("userClickAllProducts", true);
-
-		return mv;
+	return mv;
 	}
 	
 	
-	@RequestMapping(value = "/show/category/{id}/products")
-	public ModelAndView showCategoryProducts(@PathVariable("id") int id) {
-
-		ModelAndView mv = new ModelAndView("page");
-		
-		Category category = null;
-		category = categoryDAO.getId(id);
-		mv.addObject("title", category.getName());
-		
-		//listCategories
-		mv.addObject("categories", categoryDAO.list());
-		//single products
-		mv.addObject("category", category);
-		mv.addObject("userClickCategoryProducts", true);
-		
-		return mv;
-	}
+//	@RequestMapping(value="/show/category/{id}/products")
+//	public ModelAndView showCategoryProducts(@PathVariable("id") int id) {
+//	
+//	ModelAndView mv = new ModelAndView("page");
+////	Category category = null;
+////	category = categoryDAO.get(id);
+////	
+////	mv.addObject("title", category.getName());
+////	mv.addObject("categories", categoryDAO.list());
+////	mv.addObject("category", category);
+//	
+//	mv.addObject("userClickCategoryProducts", true);
+//
+//	return mv;
+//	}
+	
 	
 	
 }
